@@ -1,6 +1,6 @@
 
 {
-  "name": "react-native-react-native-ms-intune-mam",
+  "name": "react-native-ms-intune-mam",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,11 +10,13 @@
   "keywords": [
     "react-native"
   ],
-  "author": "",
-  "license": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Durgaprasad-Budhwani/react-native-ms-intune-mam.git"
+  },
+  "author": "Durgaprasad Budhwani",
+  "license": "MIT",
   "peerDependencies": {
-    "react-native": "^0.41.2",
-    "react-native-windows": "0.41.0-rc.1"
-
+    "react-native": "^0.45.2"
   }
 }

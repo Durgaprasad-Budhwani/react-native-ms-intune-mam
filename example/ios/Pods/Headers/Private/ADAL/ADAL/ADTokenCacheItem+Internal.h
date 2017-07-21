@@ -1,0 +1,1 @@
+../../../../ADAL/ADAL/src/cache/ADTokenCacheItem+Internal.h

@@ -1,0 +1,1 @@
+../../../../ADAL/ADAL/src/request/ADAuthenticationRequest+AcquireToken.h

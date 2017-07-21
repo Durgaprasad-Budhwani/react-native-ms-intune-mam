@@ -1,0 +1,1 @@
+../../../../ADAL/ADAL/src/public/mac/ADTokenCache.h

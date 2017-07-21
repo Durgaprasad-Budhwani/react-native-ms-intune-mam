@@ -1,0 +1,1 @@
+../../../../ADAL/ADAL/src/ADAuthenticationResult+Internal.h

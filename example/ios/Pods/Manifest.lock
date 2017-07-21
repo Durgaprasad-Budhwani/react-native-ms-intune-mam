@@ -1,0 +1,16 @@
+PODS:
+  - ADAL (2.4.0):
+    - ADAL/app-lib (= 2.4.0)
+  - ADAL/app-lib (2.4.0):
+    - ADAL/tokencacheheader
+  - ADAL/tokencacheheader (2.4.0)
+
+DEPENDENCIES:
+  - ADAL (~> 2.3)
+
+SPEC CHECKSUMS:
+  ADAL: fd5da364ee5d66277fe75cb87440474359595b96
+
+PODFILE CHECKSUM: 9ded15b26ecebbae2573e5d93ecbd6bca9268cf8
+
+COCOAPODS: 1.2.0

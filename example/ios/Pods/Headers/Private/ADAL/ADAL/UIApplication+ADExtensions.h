@@ -1,0 +1,1 @@
+../../../../ADAL/ADAL/src/ui/ios/UIApplication+ADExtensions.h

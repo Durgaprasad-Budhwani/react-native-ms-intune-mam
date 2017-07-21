@@ -13,7 +13,7 @@ import {
   View,
   Button,
 } from 'react-native';
-import RNReactNativeMsIntuneMam from 'react-native-react-native-ms-intune-mam'
+import RNReactNativeMsIntuneMam from 'react-native-ms-intune-mam'
 
 export default class example extends Component {
   _onLoginPress () {

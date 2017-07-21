@@ -3056,9 +3056,9 @@ react-native-azure-adal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-azure-adal/-/react-native-azure-adal-1.0.0.tgz#8593893b394c9af9154e2c904c749e3faea717fe"
 
-"react-native-react-native-ms-intune-mam@https://github.com/Durgaprasad-Budhwani/react-native-ms-intune-mam.git":
+"react-native-ms-intune-mam@https://github.com/Durgaprasad-Budhwani/react-native-ms-intune-mam.git":
   version "1.0.0"
-  resolved "https://github.com/Durgaprasad-Budhwani/react-native-ms-intune-mam.git#df18186336209f8332f4b832c91eb9d39421b055"
+  resolved "https://github.com/Durgaprasad-Budhwani/react-native-ms-intune-mam.git#0cb8b2f0690e0b45e387fb1c552582b130466b12"
 
 react-native@0.46.4:
   version "0.46.4"

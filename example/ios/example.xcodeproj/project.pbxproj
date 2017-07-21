@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -12,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* exampleTests.m */; };
+		09B33C831D6546A3B89F22F4 /* libRNReactNativeMsIntuneMam.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3733558EE2471CA08BE995 /* libRNReactNativeMsIntuneMam.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -46,7 +48,8 @@
 		825AF1341F21D588009B8F1A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825AF1331F21D588009B8F1A /* LocalAuthentication.framework */; };
 		825AF1361F21D592009B8F1A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825AF1351F21D592009B8F1A /* AudioToolbox.framework */; };
 		825AF13E1F21D8F5009B8F1A /* IntuneMAMResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 825AF13D1F21D8F5009B8F1A /* IntuneMAMResources.bundle */; };
-		82F180771F21F8EE00C5AB8B /* IntuneMAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F180761F21F8EE00C5AB8B /* IntuneMAM.framework */; };
+		82F181091F22051500C5AB8B /* IntuneMAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F180761F21F8EE00C5AB8B /* IntuneMAM.framework */; };
+		82F1810A1F22051500C5AB8B /* IntuneMAM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82F180761F21F8EE00C5AB8B /* IntuneMAM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8B83E2C5D515C216E793258F /* libPods-exampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4054E9318B03D1028BE0FF7 /* libPods-exampleTests.a */; };
 		FEE23F3E6136929D0FA3DC53 /* libPods-example-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA25AED1E22E377A7CFA274 /* libPods-example-tvOSTests.a */; };
@@ -270,6 +273,13 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNAzureAdal;
 		};
+		82F181381F2205C600C5AB8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 696A0C779AEF4F768A9A9D1E /* RNReactNativeMsIntuneMam.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNReactNativeMsIntuneMam;
+		};
 		832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
@@ -286,6 +296,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				82F1810A1F22051500C5AB8B /* IntuneMAM.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +327,8 @@
 		2D02E47B1E0B4A5D006451C7 /* example-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* example-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "example-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		696A0C779AEF4F768A9A9D1E /* RNReactNativeMsIntuneMam.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNReactNativeMsIntuneMam.xcodeproj; path = "../node_modules/react-native-ms-intune-mam/ios/RNReactNativeMsIntuneMam.xcodeproj"; sourceTree = "<group>"; };
+		6E3733558EE2471CA08BE995 /* libRNReactNativeMsIntuneMam.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNReactNativeMsIntuneMam.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		825AF0F71F21A5B5009B8F1A /* example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = example.entitlements; path = example/example.entitlements; sourceTree = "<group>"; };
 		825AF1251F21D539009B8F1A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -362,6 +375,7 @@
 				825AF1301F21D574009B8F1A /* libc++.tbd in Frameworks */,
 				825AF12E1F21D569009B8F1A /* libsqlite3.tbd in Frameworks */,
 				825AF12C1F21D55F009B8F1A /* SystemConfiguration.framework in Frameworks */,
+				82F181091F22051500C5AB8B /* IntuneMAM.framework in Frameworks */,
 				825AF12A1F21D554009B8F1A /* MobileCoreServices.framework in Frameworks */,
 				825AF1281F21D544009B8F1A /* Security.framework in Frameworks */,
 				825AF1261F21D539009B8F1A /* MessageUI.framework in Frameworks */,
@@ -369,7 +383,6 @@
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
-				82F180771F21F8EE00C5AB8B /* IntuneMAM.framework in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
@@ -379,6 +392,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				3941056882A3F10277165F3E /* libPods-example.a in Frameworks */,
 				36523FDF8F7A49EB8B82A927 /* libRNAzureAdal.a in Frameworks */,
+				09B33C831D6546A3B89F22F4 /* libRNReactNativeMsIntuneMam.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +592,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		82F181171F2205C600C5AB8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82F181391F2205C600C5AB8B /* libRNReactNativeMsIntuneMam.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,6 +615,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				D69F5470E225485C9809BDD5 /* RNAzureAdal.xcodeproj */,
+				696A0C779AEF4F768A9A9D1E /* RNReactNativeMsIntuneMam.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -809,6 +832,10 @@
 					ProductGroup = 825AF1031F21BD41009B8F1A /* Products */;
 					ProjectRef = D69F5470E225485C9809BDD5 /* RNAzureAdal.xcodeproj */;
 				},
+				{
+					ProductGroup = 82F181171F2205C600C5AB8B /* Products */;
+					ProjectRef = 696A0C779AEF4F768A9A9D1E /* RNReactNativeMsIntuneMam.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1022,6 +1049,13 @@
 			fileType = archive.ar;
 			path = libRNAzureAdal.a;
 			remoteRef = 825AF1231F21BD41009B8F1A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		82F181391F2205C600C5AB8B /* libRNReactNativeMsIntuneMam.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNReactNativeMsIntuneMam.a;
+			remoteRef = 82F181381F2205C600C5AB8B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		832341B51AAA6A8300B99B32 /* libRCTText.a */ = {
@@ -1309,13 +1343,15 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-azure-adal/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-react-native-ms-intune-mam/ios",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
 				);
 				INFOPLIST_FILE = exampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1335,13 +1371,15 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-azure-adal/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-react-native-ms-intune-mam/ios",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
 				);
 				INFOPLIST_FILE = exampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1368,7 +1406,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-azure-adal/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-react-native-ms-intune-mam/ios",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
 				);
 				INFOPLIST_FILE = example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1398,7 +1437,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-azure-adal/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-react-native-ms-intune-mam/ios",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
 				);
 				INFOPLIST_FILE = example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1428,12 +1468,14 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-azure-adal/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-react-native-ms-intune-mam/ios",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
 				);
 				INFOPLIST_FILE = "example-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1462,12 +1504,14 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-azure-adal/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-react-native-ms-intune-mam/ios",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-ms-intune-mam/ios/**",
 				);
 				INFOPLIST_FILE = "example-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1497,6 +1541,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.example-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1522,6 +1567,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.example-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

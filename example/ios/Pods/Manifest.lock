@@ -4,13 +4,16 @@ PODS:
   - ADAL/app-lib (2.4.0):
     - ADAL/tokencacheheader
   - ADAL/tokencacheheader (2.4.0)
+  - KeychainItemWrapper (1.2)
 
 DEPENDENCIES:
   - ADAL (~> 2.3)
+  - KeychainItemWrapper
 
 SPEC CHECKSUMS:
   ADAL: fd5da364ee5d66277fe75cb87440474359595b96
+  KeychainItemWrapper: 67a240172ed669842bc6bc13ed554dcd50469fa2
 
-PODFILE CHECKSUM: 9ded15b26ecebbae2573e5d93ecbd6bca9268cf8
+PODFILE CHECKSUM: 8cf85e0116e1087a6223cba15848d32cf1c353c3
 
 COCOAPODS: 1.2.0

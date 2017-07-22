@@ -4,12 +4,14 @@
 <dict>
 	<key>IntuneMAMSettings</key>
 	<dict>
+		<key>MAMPolicyWarnAbsent</key>
+		<false/>
 		<key>MAMPolicyRequired</key>
 		<true/>
 		<key>AutoEnrollOnLaunch</key>
 		<true/>
 		<key>MultiIdentity</key>
-		<true/>
+		<false/>
 		<key>MAMTelemetryDisabled</key>
 		<true/>
 	</dict>

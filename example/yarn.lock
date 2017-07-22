@@ -3052,9 +3052,9 @@ react-devtools-core@2.3.1:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-native-azure-adal@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-azure-adal/-/react-native-azure-adal-1.0.0.tgz#8593893b394c9af9154e2c904c749e3faea717fe"
+react-native-azure-adal@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-azure-adal/-/react-native-azure-adal-1.0.2.tgz#d0dde52043c818c89c0553754becc435eeca1e58"
 
 "react-native-ms-intune-mam@https://github.com/Durgaprasad-Budhwani/react-native-ms-intune-mam.git":
   version "1.0.0"

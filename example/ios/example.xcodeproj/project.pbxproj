@@ -48,8 +48,8 @@
 		825AF1341F21D588009B8F1A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825AF1331F21D588009B8F1A /* LocalAuthentication.framework */; };
 		825AF1361F21D592009B8F1A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825AF1351F21D592009B8F1A /* AudioToolbox.framework */; };
 		825AF13E1F21D8F5009B8F1A /* IntuneMAMResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 825AF13D1F21D8F5009B8F1A /* IntuneMAMResources.bundle */; };
-		82F181091F22051500C5AB8B /* IntuneMAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F180761F21F8EE00C5AB8B /* IntuneMAM.framework */; };
-		82F1810A1F22051500C5AB8B /* IntuneMAM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82F180761F21F8EE00C5AB8B /* IntuneMAM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		82F181701F221D3900C5AB8B /* IntuneMAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F181411F22199A00C5AB8B /* IntuneMAM.framework */; };
+		82F181711F221D3900C5AB8B /* IntuneMAM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82F181411F22199A00C5AB8B /* IntuneMAM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8B83E2C5D515C216E793258F /* libPods-exampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4054E9318B03D1028BE0FF7 /* libPods-exampleTests.a */; };
 		FEE23F3E6136929D0FA3DC53 /* libPods-example-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA25AED1E22E377A7CFA274 /* libPods-example-tvOSTests.a */; };
@@ -290,13 +290,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		825AF13C1F21D8BB009B8F1A /* Embed Frameworks */ = {
+		82F181721F221D3900C5AB8B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				82F1810A1F22051500C5AB8B /* IntuneMAM.framework in Embed Frameworks */,
+				82F181711F221D3900C5AB8B /* IntuneMAM.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,7 +341,7 @@
 		825AF1331F21D588009B8F1A /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		825AF1351F21D592009B8F1A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		825AF13D1F21D8F5009B8F1A /* IntuneMAMResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IntuneMAMResources.bundle; sourceTree = "<group>"; };
-		82F180761F21F8EE00C5AB8B /* IntuneMAM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IntuneMAM.framework; sourceTree = "<group>"; };
+		82F181411F22199A00C5AB8B /* IntuneMAM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntuneMAM.framework; path = "../node_modules/react-native-ms-intune-mam/IntuneSDK/IntuneMAM.framework"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8865D51E9045DE52E5B4B2F1 /* libPods-example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B24CC3231C00359A10A1D9 /* Pods-example-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-example-tvOSTests/Pods-example-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -375,7 +375,6 @@
 				825AF1301F21D574009B8F1A /* libc++.tbd in Frameworks */,
 				825AF12E1F21D569009B8F1A /* libsqlite3.tbd in Frameworks */,
 				825AF12C1F21D55F009B8F1A /* SystemConfiguration.framework in Frameworks */,
-				82F181091F22051500C5AB8B /* IntuneMAM.framework in Frameworks */,
 				825AF12A1F21D554009B8F1A /* MobileCoreServices.framework in Frameworks */,
 				825AF1281F21D544009B8F1A /* Security.framework in Frameworks */,
 				825AF1261F21D539009B8F1A /* MessageUI.framework in Frameworks */,
@@ -383,6 +382,7 @@
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
+				82F181701F221D3900C5AB8B /* IntuneMAM.framework in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
@@ -549,7 +549,6 @@
 		2D54AC913AFFADE8329A93E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				82F180761F21F8EE00C5AB8B /* IntuneMAM.framework */,
 				825AF1351F21D592009B8F1A /* AudioToolbox.framework */,
 				825AF1331F21D588009B8F1A /* LocalAuthentication.framework */,
 				825AF1311F21D57E009B8F1A /* ImageIO.framework */,
@@ -632,6 +631,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				82F181411F22199A00C5AB8B /* IntuneMAM.framework */,
 				825AF13D1F21D8F5009B8F1A /* IntuneMAMResources.bundle */,
 				13B07FAE1A68108700A75B9A /* example */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -690,7 +690,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				BB51FD655194491D883179D6 /* [CP] Embed Pods Frameworks */,
 				9D62C584620CC0902CA1FC6C /* [CP] Copy Pods Resources */,
-				825AF13C1F21D8BB009B8F1A /* Embed Frameworks */,
+				82F181721F221D3900C5AB8B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1402,6 +1402,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../node_modules/react-native-ms-intune-mam/IntuneSDK/**",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1433,6 +1434,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../node_modules/react-native-ms-intune-mam/IntuneSDK/**",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

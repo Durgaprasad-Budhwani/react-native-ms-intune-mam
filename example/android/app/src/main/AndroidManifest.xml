@@ -1,32 +1,135 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example"
     android:versionCode="1"
     android:versionName="1.0">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="22" />
+        android:targetSdkVersion="22"
+        tools:ignore="OldTargetApi" />
+
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission
+        android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission
+        android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission
+        android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission
+        android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-      android:name=".MainApplication"
-      android:allowBackup="true"
-      android:label="@string/app_name"
-      android:icon="@mipmap/ic_launcher"
-      android:theme="@style/AppTheme">
-      <activity
-        android:name=".MainActivity"
+        android:name=".MainApplication"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-        android:windowSoftInputMode="adjustResize">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-      </activity>
-      <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+        android:theme="@style/AppTheme"
+        tools:ignore="MissingApplicationIcon"
+        android:exported="true"
+        android:backupAgent="com.microsoft.intune.mam.client.app.backup.MAMDefaultBackupAgent"
+        android:allowBackup="true">
+
+        <receiver android:name="com.microsoft.intune.mam.client.service.MAMBackgroundReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:label="ADALLogin"
+            android:name="com.microsoft.aad.adal.AuthenticationActivity" />
+
+        <activity
+            android:name="com.microsoft.intune.mam.client.app.offline.OfflineStartupBlockedActivity"
+            android:exported="false"
+            android:multiprocess="true"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.microsoft.intune.mam.client.app.offline.OfflineRestartRequiredActivity"
+            android:exported="false"
+            android:multiprocess="true"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.microsoft.intune.mam.client.app.startup.MAMStartupActivity"
+            android:exported="false"
+            android:multiprocess="true"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.microsoft.intune.mam.client.app.resolver.MAMResolverActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.microsoft.intune.mam.client.app.data.WipeUserDataActivity"
+            android:exported="false"
+            android:noHistory="true" />
+        <activity
+            android:name="com.microsoft.intune.mam.client.app.offline.OfflineInstallCompanyPortalDialogActivity"
+            android:exported="false"
+            android:multiprocess="true"
+            android:theme="@android:style/Theme.Dialog" />
+        <!--TODO-->
+        <service
+            android:label="Notification"
+            android:name="com.microsoft.intune.mam.client.notification.MAMNotificationReceiverService"
+            android:exported="true" />
+        <!--<service-->
+            <!--android:label="Company App Portal"-->
+            <!--android:name="com.microsoft.intune.mam.client.notification.CompanyPortalInstallHandler"-->
+            <!--android:exported="true" />-->
+        <service
+            android:label="BackgroundService"
+            android:name="com.microsoft.intune.mam.client.service.MAMBackgroundService"
+            android:exported="false" />
+        <receiver
+            android:name="com.microsoft.intune.mam.client.service.MAMBackgroundReceiver">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
+        <meta-data
+            android:name="com.microsoft.intune.mam.MAMPolicyRequired"
+            android:value="true" />
+        <meta-data
+            android:name="com.microsoft.intune.mam.DefaultMAMServiceEnrollment"
+            android:value="true" />
+        <meta-data
+            android:name="com.microsoft.intune.mam.MAMMultiIdentity"
+            android:value="true" />
+        <!--TODO-->
+
+        <activity
+            android:name="com.microsoft.intune.mam.client.app.offline.OfflineNotifyWipeActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Dialog" />
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 
 </manifest>

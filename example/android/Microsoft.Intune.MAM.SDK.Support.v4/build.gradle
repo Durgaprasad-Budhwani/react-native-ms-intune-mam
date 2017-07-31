@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('Microsoft.Intune.MAM.SDK.Support.v4.jar'))

@@ -2,50 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IntuneMAMSettings</key>
-	<dict>
-		<key>MAMPolicyWarnAbsent</key>
-		<false/>
-		<key>MAMPolicyRequired</key>
-		<true/>
-		<key>AutoEnrollOnLaunch</key>
-		<true/>
-		<key>MultiIdentity</key>
-		<false/>
-		<key>MAMTelemetryDisabled</key>
-		<true/>
-	</dict>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>msauth</string>
-		<string>ms-outlook-intunemam</string>
-		<string>http-intunemam</string>
-		<string>https-intunemam</string>
-		<string>msauth-intunemam</string>
-	</array>
-	<key>CFBundleSupportedPlatforms</key>
-	<array>
-		<string>iPhoneOS</string>
-	</array>
-	<key>NSAppTransportSecurity - 2</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>com.varian.awesomeproject</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>x-msauth-awesomeproject</string>
-				<string>x-msauth-awesomeproject-intunemam</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -64,8 +20,47 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.varian.awesomeproject</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>x-msauth-awesomeproject</string>
+				<string>x-msauth-awesomeproject-intunemam</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>IntuneMAMSettings</key>
+	<dict>
+		<key>AutoEnrollOnLaunch</key>
+		<true/>
+		<key>MAMPolicyRequired</key>
+		<true/>
+		<key>MAMPolicyWarnAbsent</key>
+		<false/>
+		<key>MAMTelemetryDisabled</key>
+		<true/>
+		<key>MultiIdentity</key>
+		<false/>
+	</dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>msauth</string>
+		<string>ms-outlook-intunemam</string>
+		<string>http-intunemam</string>
+		<string>https-intunemam</string>
+		<string>msauth-intunemam</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -78,6 +73,11 @@
 				<true/>
 			</dict>
 		</dict>
+	</dict>
+	<key>NSAppTransportSecurity - 2</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>

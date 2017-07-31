@@ -29,9 +29,9 @@ export default class example extends Component {
       let isConfigure =  await AzureAdal.configure(authority, false, clientId, redirectUri, false);
       console.log(isConfigure);
       // let userId = await RNReactNativeMsIntuneMam.getCurrentEnrolledAccount();
-      let result = await AzureAdal.loginWithPrompt(resourceUri);
+      let result = await AzureAdal.login(resourceUri);
       console.log(result);
-      let enrolled1 = await RNReactNativeMsIntuneMam.registerAndEnrollAccount(result.userInfo.displayableId, false);
+      let enrolled1 = await RNReactNativeMsIntuneMam.registerAndEnrollAccount(result.userInfo.displayableId, true);
       console.log(enrolled1);
     }
     catch (error) {
@@ -42,7 +42,7 @@ export default class example extends Component {
   
   
   async _logout () {
-    await AzureAdal.logout(resourceUri);
+    await AzureAdal.logout(redirectUri);
     let user = await RNReactNativeMsIntuneMam.getCurrentEnrolledAccount();
     console.log('user', user);
     if(user){
@@ -55,7 +55,7 @@ export default class example extends Component {
     let isConfigure =  await AzureAdal.configure(authority, false, clientId, redirectUri, false);
     let user = await AzureAdal.login(resourceUri);
     let redirectUri = "http://ariamobileapp-redirect-uri";
-    let configurations = await RNReactNativeMsIntuneMam.getAppConfiguration(null);
+    let configurations = await RNReactNativeMsIntuneMam.getAppConfiguration(result.userInfo.displayableId);
     if(configurations){
       // console.log(result);
       console.log(user);
@@ -85,8 +85,14 @@ export default class example extends Component {
     
   }
   
+  async _unenrolledDefaultUser() {
+  
+  }
+  
   async _getConfiguration () {
-    let result = await RNReactNativeMsIntuneMam.getAppConfiguration(null);
+    let user = await RNReactNativeMsIntuneMam.getCurrentEnrolledAccount();
+    console.log(user);
+    let result = await RNReactNativeMsIntuneMam.getAppConfiguration(user);
     console.log(result);
   }
   

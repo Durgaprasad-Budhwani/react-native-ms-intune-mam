@@ -1,4 +1,3 @@
-
 #import "RNReactNativeMsIntuneMam.h"
 #import <IntuneMAM/IntuneMAM.h>
 
@@ -72,18 +71,33 @@ RCT_REMAP_METHOD(registerAndEnrollAccount,
         else{
             [intuneMAMEnrollmentManager registerAndEnrollAccount:identity];
         }
-        resolve( @"success" );
+        
+        
+        
         IntuneMAMPolicyManager* policyManager = [IntuneMAMPolicyManager instance];
-        NSString* uiIdentity = [policyManager getUIPolicyIdentity];
-        if(uiIdentity != identity){
+        NSString* primaryUser = [policyManager primaryUser];
+        
+        // TODO -- need to relook on it
+//        if(primaryUser){
+//            [intuneMAMEnrollmentManager deRegisterAndUnenrollAccount:primaryUser withWipe:YES];
+//        }
+        @try{
+            [policyManager setProcessIdentity:identity];
+            NSString* uiIdentity = [policyManager getUIPolicyIdentity];
             [policyManager setUIPolicyIdentity:identity
                              completionHandler:^(IntuneMAMSwitchIdentityResult result) {
+                                
                                  resolve( @"success" );
                              }];
+
         }
-        else{
-            resolve( @"success" );
+        @catch(NSError *error){
+            reject( [[NSString alloc] initWithFormat:@"%d", error.code], error.localizedDescription, error );
         }
+
+        
+
+        
     }
     @catch(NSError *error){
         reject( [[NSString alloc] initWithFormat:@"%d", error.code], error.localizedDescription, error );
@@ -157,4 +171,3 @@ RCT_REMAP_METHOD(getAppConfiguration,
 }
 
 @end
-

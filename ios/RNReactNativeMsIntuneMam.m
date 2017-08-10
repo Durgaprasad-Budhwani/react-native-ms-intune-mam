@@ -86,10 +86,9 @@ RCT_REMAP_METHOD(registerAndEnrollAccount,
             NSString* uiIdentity = [policyManager getUIPolicyIdentity];
             [policyManager setUIPolicyIdentity:identity
                              completionHandler:^(IntuneMAMSwitchIdentityResult result) {
-                                
                                  resolve( @"success" );
                              }];
-
+            resolve(@"success");
         }
         @catch(NSError *error){
             reject( [[NSString alloc] initWithFormat:@"%d", error.code], error.localizedDescription, error );
@@ -102,6 +101,18 @@ RCT_REMAP_METHOD(registerAndEnrollAccount,
     @catch(NSError *error){
         reject( [[NSString alloc] initWithFormat:@"%d", error.code], error.localizedDescription, error );
     }
+}
+
+RCT_REMAP_METHOD(exitApplication,
+resolve1:(RCTPromiseResolveBlock)resolve
+rejecter:(RCTPromiseRejectBlock)reject ){
+@try{
+  resolve( @"success" );
+exit(0);
+}
+@catch(NSError *error){
+  reject( [[NSString alloc] initWithFormat:@"%d", error.code], error.localizedDescription, error );
+}
 }
 
 /**

@@ -36,9 +36,9 @@ export default class example extends Component {
     try {
       let isConfigure =  await AzureAdal.configure(authority, false, clientId, redirectUri,  false);
       console.log(isConfigure);
-      let user = await RNReactNativeMsIntuneMam.getCurrentEnrolledAccount();
+      //let user = await RNReactNativeMsIntuneMam.getCurrentEnrolledAccount();
       // let userId = await RNReactNativeMsIntuneMam.getCurrentEnrolledAccount();
-      let result = await AzureAdal.login(resourceUri, user);
+      let result = await AzureAdal.login(resourceUri, "");
       console.log(result);
       userInfo = result.userInfo;
       let enrolled1 = await RNReactNativeMsIntuneMam.registerAndEnrollAccount(userInfo.displayableId, userInfo.userId, result.tenantId, result.accessToken);
@@ -71,7 +71,6 @@ export default class example extends Component {
   async _loginWithApplicationUrl() {
     let isConfigure =  await AzureAdal.configure(authority, false, clientId, redirectUri, false);
     let user = await AzureAdal.login(resourceUri);
-    let redirectUri = "http://ariamobileapp-redirect-uri";
     let configurations = await RNReactNativeMsIntuneMam.getAppConfiguration(null);
     if(configurations){
       // console.log(result);
@@ -85,7 +84,8 @@ export default class example extends Component {
 	console.log(clientId);
 	console.log(applicationUrl);
 	console.log(authority);
-	await AzureAdal.configure(authority, false, clientId, redirectUri, false);
+	let redirectUri1 = "http://ariamobileapp-redirect-uri";
+	await AzureAdal.configure(authority, false, clientId, redirectUri1, false);
 	let result = await AzureAdal.login(applicationUrl, user.userInfo.displayableId);
 	console.log(result);
       }

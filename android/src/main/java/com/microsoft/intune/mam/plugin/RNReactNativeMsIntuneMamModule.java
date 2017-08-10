@@ -178,12 +178,21 @@ public class RNReactNativeMsIntuneMamModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void getCurrentEnrolledAccount(final Promise promise) {
-        MAMUserInfo info = MAMComponents.get(MAMUserInfo.class);
-        if (info != null) {
-            promise.resolve(info.getPrimaryUser());
-        } else {
-            promise.reject(Constants.USER_NOT_FOUND, Constants.USER_NOT_FOUND);
+        try{
+            MAMUserInfo info = MAMComponents.get(MAMUserInfo.class);
+            if (info != null) {
+                promise.resolve(info.getPrimaryUser());
+            } else {
+                promise.reject(Constants.USER_NOT_FOUND, Constants.USER_NOT_FOUND);
+            }
         }
+        catch (Exception exception) {
+           Log.e("Intune", "exception: " + exception.getMessage());
+           Log.e("Intune", "exception: " + exception.toString());
+           Log.e("MsIntuneMamModule", "Exception: " + exception.getStackTrace());
+           promise.reject(Constants.ERROR, exception.getMessage());
+        }
+
     }
 
     @ReactMethod
@@ -195,20 +204,21 @@ public class RNReactNativeMsIntuneMamModule extends ReactContextBaseJavaModule {
             MAMAppConfigManager configManager = MAMComponents.get(MAMAppConfigManager.class);
             if (configManager != null) {
                 MAMAppConfig appConfig = configManager.getAppConfig(identity);
+                if(appConfig != null){
+                    List<Map<String, String>> data = appConfig.getFullData();
+                    WritableMap result = Arguments.createMap();
 
-                List<Map<String, String>> data = appConfig.getFullData();
-                WritableMap result = Arguments.createMap();
-
-                for (Map<String, String> mapData : data) {
-                    for (Map.Entry<String, String> entry : mapData.entrySet()) {
-                        result.putString(entry.getKey(), entry.getValue());
+                    for (Map<String, String> mapData : data) {
+                        for (Map.Entry<String, String> entry : mapData.entrySet()) {
+                            result.putString(entry.getKey(), entry.getValue());
+                        }
                     }
-                }
 
-                promise.resolve(result);
-            } else {
-                promise.reject(Constants.MAM_NOT_ENROLLED, Constants.MAM_NOT_ENROLLED);
+                    promise.resolve(result);
+                    return;
+                }
             }
+            promise.reject(Constants.MAM_NOT_ENROLLED, Constants.MAM_NOT_ENROLLED);
         } catch (Exception exception) {
             Log.e("Intune", "exception: " + exception.getMessage());
             Log.e("Intune", "exception: " + exception.toString());

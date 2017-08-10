@@ -17,6 +17,6 @@
   "author": "Durgaprasad Budhwani",
   "license": "MIT",
   "peerDependencies": {
-    "react-native": "^0.45.2"
+    "react-native": "^0.47.0"
   }
 }

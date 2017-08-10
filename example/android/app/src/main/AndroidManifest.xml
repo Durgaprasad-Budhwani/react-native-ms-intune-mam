@@ -5,10 +5,11 @@
     android:versionName="1.0">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <uses-sdk
-        android:minSdkVersion="16"
+        android:minSdkVersion="25"
         android:targetSdkVersion="22"
         tools:ignore="OldTargetApi" />
 
@@ -105,12 +106,24 @@
         </receiver>
         <meta-data
             android:name="com.microsoft.intune.mam.MAMPolicyRequired"
-            android:value="true" />
+            android:value="false" />
         <meta-data
             android:name="com.microsoft.intune.mam.DefaultMAMServiceEnrollment"
-            android:value="true" />
+            android:value="false" />
         <meta-data
             android:name="com.microsoft.intune.mam.MAMMultiIdentity"
+            android:value="true" />
+        <meta-data
+            android:name="com.microsoft.intune.mam.aad.Authority"
+            android:value="https://login.windows.net/common/oauth2/authorize" />
+        <meta-data
+            android:name="com.microsoft.intune.mam.aad.ClientID"
+            android:value="6c7e8096-f593-4d72-807f-a5f86dcc9c77" />
+        <meta-data
+            android:name="com.microsoft.intune.mam.aad.NonBrokerRedirectURI"
+            android:value="urn:ietf:wg:oauth:2.0:oob" />
+        <meta-data
+            android:name="com.microsoft.intune.mam.aad.SkipBroker"
             android:value="true" />
         <!--TODO-->
 

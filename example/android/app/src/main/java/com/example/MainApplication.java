@@ -7,10 +7,14 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.microsoft.aad.adal.AuthenticationSettings;
 import com.microsoft.azure.adal.RNAzureAdalPackage;
 import com.microsoft.intune.mam.client.app.MAMApplication;
 import com.microsoft.intune.mam.plugin.RNReactNativeMsIntuneMamPackage;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -46,6 +50,10 @@ public class MainApplication extends MAMApplication implements ReactApplication 
 
 //  @Override
   public byte[] getADALSecretKey() {
-    return null;
+    if (AuthenticationSettings.INSTANCE.getSecretKeyData() == null) {
+      // use same key for tests
+      return com.microsoft.azure.adal.AdalUtils.getADALSecretKey();
+    }
+    return AuthenticationSettings.INSTANCE.getSecretKeyData();
   }
 }

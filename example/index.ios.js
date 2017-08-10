@@ -33,6 +33,9 @@ export default class example extends Component {
       console.log(result);
       let enrolled1 = await RNReactNativeMsIntuneMam.registerAndEnrollAccount(result.userInfo.displayableId, true);
       console.log(enrolled1);
+  
+      let configurations = await RNReactNativeMsIntuneMam.getAppConfiguration(result.userInfo.displayableId);
+      console.log(configurations);
     }
     catch (error) {
       console.log(error);

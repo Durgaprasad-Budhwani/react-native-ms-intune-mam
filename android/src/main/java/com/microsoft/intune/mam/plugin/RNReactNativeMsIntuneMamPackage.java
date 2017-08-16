@@ -21,4 +21,9 @@ public class RNReactNativeMsIntuneMamPackage implements ReactPackage {
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
       return Collections.emptyList();
     }
+    
+    @Override
+    public List<Class<? extends JavaScriptModule>> createJSModules() {
+        return null;
+    }
 }

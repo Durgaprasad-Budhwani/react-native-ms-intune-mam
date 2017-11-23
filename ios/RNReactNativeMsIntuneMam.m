@@ -72,29 +72,57 @@ RCT_REMAP_METHOD(registerAndEnrollAccount,
             [intuneMAMEnrollmentManager registerAndEnrollAccount:identity];
         }
         
-        
-        
-        IntuneMAMPolicyManager* policyManager = [IntuneMAMPolicyManager instance];
-        NSString* primaryUser = [policyManager primaryUser];
-        
-        // TODO -- need to relook on it
-//        if(primaryUser){
-//            [intuneMAMEnrollmentManager deRegisterAndUnenrollAccount:primaryUser withWipe:YES];
-//        }
-        @try{
-            [policyManager setProcessIdentity:identity];
-            NSString* uiIdentity = [policyManager getUIPolicyIdentity];
-            [policyManager setUIPolicyIdentity:identity
-                             completionHandler:^(IntuneMAMSwitchIdentityResult result) {
-                                
-                                 resolve( @"success" );
-                             }];
-
-        }
-        @catch(NSError *error){
-            reject( [[NSString alloc] initWithFormat:@"%d", error.code], error.localizedDescription, error );
-        }
-
+        dispatch_async(dispatch_get_main_queue(), ^{
+            @try{
+                IntuneMAMPolicyManager* policyManager = [IntuneMAMPolicyManager instance];
+                NSString* primaryUser = [policyManager primaryUser];
+                [policyManager setProcessIdentity:identity];
+                NSString* uiIdentity = [policyManager getUIPolicyIdentity];
+                [policyManager setUIPolicyIdentity:identity
+                                 completionHandler:^(IntuneMAMSwitchIdentityResult result) {
+                                     
+                                     resolve( @"success" );
+                                 }];
+                
+                NSDate* date = [NSDate date];
+                IntuneMAMAppConfigManager* configManager = [IntuneMAMAppConfigManager instance];
+                NSArray<NSDictionary*>* configurations;
+                while (TRUE)
+                {
+                    
+                    NSArray<NSDictionary*>* configurations = [[configManager appConfigForIdentity:identity] fullData];
+                    
+                    if (configurations)
+                    {
+                        // the condition is reached
+                        break;
+                    }
+                    
+                    if ([date timeIntervalSinceNow] < -10)
+                    {
+                        // the condition is not reached before timeout
+                        break;
+                    }
+                    
+                    // adapt this value in microseconds.
+                    usleep(10000);
+                }
+                if(configurations){
+                    resolve( @"success" );
+                }
+                else{
+                    NSError *err = [NSError errorWithDomain:@"INTUNE"
+                                                       code:100
+                                                   userInfo:@{
+                                                              NSLocalizedDescriptionKey:@"Please restart application"
+                                                              }];
+                    @throw err;
+                }
+            }
+            @catch(NSError *error){
+                reject( [[NSString alloc] initWithFormat:@"%d", error.code], error.localizedDescription, error );
+            }
+        });
         
 
         

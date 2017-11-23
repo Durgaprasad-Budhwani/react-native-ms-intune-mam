@@ -1,6 +1,6 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.microsoft.intune.mam.plugin">
+          package="com.microsoft.intune.mam">
 
 </manifest>
   

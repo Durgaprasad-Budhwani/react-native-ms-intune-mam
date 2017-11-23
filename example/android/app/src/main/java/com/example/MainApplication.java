@@ -10,7 +10,7 @@ import com.facebook.soloader.SoLoader;
 import com.microsoft.aad.adal.AuthenticationSettings;
 import com.microsoft.azure.adal.RNAzureAdalPackage;
 import com.microsoft.intune.mam.client.app.MAMApplication;
-import com.microsoft.intune.mam.plugin.RNReactNativeMsIntuneMamPackage;
+import com.microsoft.intune.mam.RNReactNativeMsIntuneMamPackage;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
@@ -21,6 +21,7 @@ import java.util.List;
 public class MainApplication extends MAMApplication implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
@@ -47,6 +48,8 @@ public class MainApplication extends MAMApplication implements ReactApplication 
     super.onMAMCreate();
     SoLoader.init(this, /* native exopackage */ false);
   }
+
+
 
 //  @Override
   public byte[] getADALSecretKey() {

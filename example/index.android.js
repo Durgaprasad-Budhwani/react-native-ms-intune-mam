@@ -16,12 +16,14 @@ import {
 import RNReactNativeMsIntuneMam from 'react-native-ms-intune-mam';
 import AzureAdal from 'react-native-azure-adal';
 
-const authority = "https://login.windows.net/common/oauth2/authorize"; //"https://login.windows.net/ariaserver.onmicrosoft.com";
-const resourceUri =  "https://msmamservice.api.application/"; //"https://ariamobileappproxy-ariaserver.msappproxy.net/VMS.ARIAMobile.DummryService/";
+const authority = "https://login.windows.net/common"; //"https://login.windows.net/ariaval.onmicrosoft.com"; //
+// const resourceUri =  "https://intunemam.microsoftonline.com"; // "https://ariaproxy-ariaval.msappproxy.net/ARIAMobileGatewayService/"; //
+const resourceUri = "https://msmamservice.api.application";
+const clientId = "6c7e8096-f593-4d72-807f-a5f86dcc9c77"; // '75268f9c-37de-45d0-9c22-84ceaacfcacb'; //
 
-const clientId = "6c7e8096-f593-4d72-807f-a5f86dcc9c77"; //'f00ae3c0-172f-4978-a409-7d7bb29b1026';
-
-const redirectUri = "urn:ietf:wg:oauth:2.0:oob"; //"http://TodoListClient"; //"x-msauth-awesomeproject://com.varian.awesomeproject"; //
+// const redirectUri = "urn:ietf:wg:oauth:2.0:oob"; //"http://TodoListClient"; //"x-msauth-awesomeproject://com.varian.awesomeproject"; //
+// const redirectUri = "msauth://com.example/8BhOF7pgEpduSQKBKziiWZDhIVA%3D";
+const redirectUri = "urn:ietf:wg:oauth:2.0:oob";
 
 // const authority = "https://login.windows.net/oncology1.onmicrosoft.com"; //"https://login.windows.net/ariaserver.onmicrosoft.com";
 // const resourceUri =  "https://graph.windows.net/"; //"https://msmamservice.api.application/"; //"https://ariamobileappproxy-ariaserver.msappproxy.net/VMS.ARIAMobile.DummryService/";
@@ -38,11 +40,16 @@ export default class example extends Component {
       console.log(isConfigure);
       //let user = await RNReactNativeMsIntuneMam.getCurrentEnrolledAccount();
       // let userId = await RNReactNativeMsIntuneMam.getCurrentEnrolledAccount();
-      let result = await AzureAdal.login(resourceUri, "");
+      let result = await AzureAdal.loginWithPrompt(resourceUri);
       console.log(result);
       userInfo = result.userInfo;
+      console.log(userInfo);
+  
       let enrolled1 = await RNReactNativeMsIntuneMam.registerAndEnrollAccount(userInfo.displayableId, userInfo.userId, result.tenantId, result.accessToken);
       console.log(enrolled1);
+  
+      let status = await RNReactNativeMsIntuneMam.getRegisteredAccountStatus(userInfo.displayableId);
+      console.log(status);
     }
     catch (error) {
       console.log(error);
@@ -53,15 +60,15 @@ export default class example extends Component {
   
   async _logout () {
     try{
-      let isConfigure =  await AzureAdal.configure(authority, false, clientId, redirectUri, false);
-      console.log(isConfigure);
-      await AzureAdal.logout(resourceUri);
       let user = await RNReactNativeMsIntuneMam.getCurrentEnrolledAccount();
       console.log('user', user);
       if(user){
 	let enrolled = await RNReactNativeMsIntuneMam.deRegisterAndUnenrollAccount(user);
 	console.log(enrolled);
       }
+      let isConfigure =  await AzureAdal.configure(authority, false, clientId, redirectUri, false);
+      console.log(isConfigure);
+      await AzureAdal.logout(resourceUri);
     }
     catch(error){
       console.log(error);
@@ -112,13 +119,17 @@ export default class example extends Component {
     let result = await RNReactNativeMsIntuneMam.getCurrentEnrolledAccount();
     console.log(result);
     
-    let status = await RNReactNativeMsIntuneMam.getRegisteredAccountStatus(result);
+    let status = await RNReactNativeMsIntuneMam.updateProcessIdentity(result);
     console.log(status);
   }
   
   async _getCurrentThreadIdentity () {
     let result = await RNReactNativeMsIntuneMam.getCurrentThreadIdentity();
     console.log(result);
+  }
+  
+  restartApp () {
+    RNReactNativeMsIntuneMam.restartApp();
   }
   
   async _setUICurrentUser () {
@@ -160,7 +171,7 @@ export default class example extends Component {
 	<View style={{marginBottom:10}}>
 	  <Button
 	    onPress={this._enrollCurrentUser.bind(this)}
-	    title="EnrollCurrentUser"
+	    title="Update Process"
 	  />
 	</View>
 	<View style={{marginBottom:10}}>
@@ -179,6 +190,12 @@ export default class example extends Component {
 	  <Button
 	    onPress={this._logout.bind(this)}
 	    title="Logout"
+	  />
+	</View>
+	<View style={{marginBottom:10}}>
+	  <Button
+	    onPress={this.restartApp.bind(this)}
+	    title="Restart App"
 	  />
 	</View>
       </View>

@@ -1,4 +1,4 @@
-package com.microsoft.intune.mam.plugin;
+package com.microsoft.intune.mam;
 
 import android.util.Log;
 

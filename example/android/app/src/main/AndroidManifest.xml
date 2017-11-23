@@ -9,8 +9,8 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <uses-sdk
-        android:minSdkVersion="25"
-        android:targetSdkVersion="22"
+        android:minSdkVersion="18"
+        android:targetSdkVersion="23"
         tools:ignore="OldTargetApi" />
 
     <uses-permission
@@ -44,6 +44,7 @@
         tools:ignore="MissingApplicationIcon"
         android:exported="true"
         android:backupAgent="com.microsoft.intune.mam.client.app.backup.MAMDefaultBackupAgent"
+
         android:allowBackup="true">
 
         <receiver android:name="com.microsoft.intune.mam.client.service.MAMBackgroundReceiver" >
@@ -109,22 +110,22 @@
             android:value="false" />
         <meta-data
             android:name="com.microsoft.intune.mam.DefaultMAMServiceEnrollment"
-            android:value="false" />
+            android:value="true" />
         <meta-data
             android:name="com.microsoft.intune.mam.MAMMultiIdentity"
-            android:value="true" />
-        <meta-data
-            android:name="com.microsoft.intune.mam.aad.Authority"
-            android:value="https://login.windows.net/common/oauth2/authorize" />
-        <meta-data
-            android:name="com.microsoft.intune.mam.aad.ClientID"
-            android:value="6c7e8096-f593-4d72-807f-a5f86dcc9c77" />
-        <meta-data
-            android:name="com.microsoft.intune.mam.aad.NonBrokerRedirectURI"
-            android:value="urn:ietf:wg:oauth:2.0:oob" />
-        <meta-data
-            android:name="com.microsoft.intune.mam.aad.SkipBroker"
-            android:value="true" />
+            android:value="false" />
+        <!--<meta-data-->
+            <!--android:name="com.microsoft.intune.mam.aad.Authority"-->
+            <!--android:value="https://login.windows.net/common/oauth2/authorize" />-->
+        <!--<meta-data-->
+            <!--android:name="com.microsoft.intune.mam.aad.ClientID"-->
+            <!--android:value="6c7e8096-f593-4d72-807f-a5f86dcc9c77" />-->
+        <!--<meta-data-->
+            <!--android:name="com.microsoft.intune.mam.aad.NonBrokerRedirectURI"-->
+            <!--android:value="urn:ietf:wg:oauth:2.0:oob" />-->
+        <!--<meta-data-->
+            <!--android:name="com.microsoft.intune.mam.aad.SkipBroker"-->
+            <!--android:value="true" />-->
         <!--TODO-->
 
         <activity

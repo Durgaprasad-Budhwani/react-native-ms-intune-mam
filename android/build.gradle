@@ -31,6 +31,7 @@ repositories {
 }
 
 dependencies {
-     compile 'com.facebook.react:react-native:0.18.+'
+     compile fileTree(dir: '../IntuneSDK/android/libs', include: ['*.jar'])
+     compile 'com.facebook.react:react-native:+'
 }
   

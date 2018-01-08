@@ -17,5 +17,5 @@
   <string name="wg_offline_must_restart">Your IT department is now helping you protect work or school data in this app. Restart the app to continue.</string>
   <string name="wg_offline_initialization_failure">There was an issue launching your app. Try updating the app or the Intune Company Portal app. If you need help, contact your IT administrator.</string>
   <string name="wg_offline_ssp_removed_notify_wipe">Your organization has removed its data associated with this app because the Intune Company Portal data or application was removed. To reconnect, you must sign-in with your work or school account.</string>
-  <string name="wg_offline_ssp_removed_notify_system_wipe">Your organization has removed its data associated with this app because the Intune Company Portal data or application was removed. This application will now close. To reconnect, you must sign-in with your work or school account.</string>
+  <string name="wg_offline_ssp_removed_notify_system_wipe">The Intune application has been removed from this device.  This application will now close.  To re-enable application access please be sure Intune is installed and you have properly entered your credentials.</string>
 </resources>

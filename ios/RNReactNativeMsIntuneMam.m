@@ -1,6 +1,12 @@
 #import "RNReactNativeMsIntuneMam.h"
 #import <IntuneMAM/IntuneMAM.h>
 
+@interface RNReactNativeMsIntuneMam ()<IntuneMAMPolicyDelegate>
+
+@property (nonatomic,weak) id<IntuneMAMPolicyDelegate> delegate;
+
+@end
+
 @implementation RNReactNativeMsIntuneMam
 
 - (dispatch_queue_t)methodQueue
@@ -65,6 +71,7 @@ RCT_REMAP_METHOD(registerAndEnrollAccount,
                  rejecter:(RCTPromiseRejectBlock)reject ){
     @try{
         IntuneMAMEnrollmentManager* intuneMAMEnrollmentManager = [IntuneMAMEnrollmentManager instance];
+        [self.delegate restartApplication];
         if(forceLogin){
             [intuneMAMEnrollmentManager loginAndEnrollAccount:identity];
         }
